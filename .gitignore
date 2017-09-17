@@ -108,11 +108,13 @@ UmbracoTraceLog.txt
 Umbraco.Site/App_Data/Models/all.dll.path
 
 **/Umbraco.Site/App_Plugins/UmbracoForms/Data/* 
-**/Umbraco.Site/cache/* 
-**/Umbraco.Site/css/app*.css 
-**/Umbraco.Site/css/admin*.css 
-**/Umbraco.Site/css/Umbraco*.css 
-**/Umbraco.Site/Scripts/app*.js 
-**/Umbraco.Site/Scripts/admin*.js 
+**/Umbraco.Site/cache/*
+**/Umbraco.Site/css/app*.css
+**/Umbraco.Site/css/admin*.css
+**/Umbraco.Site/css/Umbraco*.css
+**/Umbraco.Site/Scripts/app*.js
+**/Umbraco.Site/Scripts/admin*.js
+**/Umbraco.Site/Scripts/client*.js 
+**/Umbraco.Site/Scripts/server*.js 
  
 Umbraco\.Site/Properties/PublishProfiles/Default Settings\.pubxml 

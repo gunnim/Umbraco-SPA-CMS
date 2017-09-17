@@ -1,35 +1,14 @@
 {
-  "name": "deltacars",
+  "name": "umbracospacms",
   "version": "1.0.0",
-  "description": "Delta Cars",
-  "main": "js/app.ts",
-  "scripts": {
-    "test": "jest --verbose --runInBand"
-  },
-  "jest": {
-    "moduleDirectories": [
-      "node_modules",
-      "bower_components",
-      "js"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js",
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx|js)"
-    ]
-  },
+  "description": "Umbraco SPA CMS",
+  "main": "js/app.tsx",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gunnim"
   },
-  "author": "Vettvangur",
+  "author": "Gunnar Már Óttarsson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gunnim"
@@ -41,7 +20,9 @@
     "@types/react-dom": "^15.5.4",
     "@types/react-transition-group": "^2.0.4",
     "awesome-typescript-loader": "^3.2.3",
-    "babel-core": "^6.24.1",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "expose-loader": "^0.7.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
@@ -55,8 +36,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.1.1",
     "react-transition-group": "^2.2.0",
-    "ts-node": "^3.1.0",
-    "typescript": "^2.4.2",
-    "webpack": "^2.5.1"
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2",
+    "webpack": "^3.6.0"
   }
 }

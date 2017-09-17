@@ -1,8 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@using Umbraco.Extensions.Helpers
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.SPA.Extensions
 @{
     Layout = null;
-
 }
 
 <!doctype html>
@@ -22,21 +21,13 @@
 
 <body>
 
-    @RenderBody()
+    @RenderSection("Main")
 
-    @if (HttpContext.Current.IsDebuggingEnabled)
-    {
-        <script src="@Versioning.PathAndChecksum("/scripts/client.js")"></script>
-    }
-    else
-    {
-        <script src="@Versioning.PathAndChecksum("/scripts/client.min.js")"></script>
-    }
+    @Html.UmbracoSPAInit()
 
     @RenderSection("Scripts", required: false)
 
     @Html.ReactInitJavaScript()
-
 
 </body>
 

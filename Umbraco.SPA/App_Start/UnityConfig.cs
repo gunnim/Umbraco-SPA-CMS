@@ -42,10 +42,10 @@ namespace Umbraco.Extensions.App_Start
                 WithName.Default
             );
 
-            container.RegisterType<HttpContextBase>(new PerRequestLifetimeManager(), new InjectionFactory(c => new HttpContextWrapper(HttpContext.Current)));
-            container.RegisterType<ApplicationContext>(new InjectionFactory(c => ApplicationContext.Current));
-            container.RegisterType<UmbracoContext>(new PerRequestLifetimeManager(), new InjectionFactory(c => UmbracoContext.Current));
-            container.RegisterType<UmbracoHelper>(new PerRequestLifetimeManager(), new InjectionConstructor(typeof(UmbracoContext)));
+            container.RegisterType<HttpContextBase>(new InjectionFactory(c => new HttpContextWrapper(HttpContext.Current)));
+            container.RegisterType<ApplicationContext>(new ContainerControlledLifetimeManager(), new InjectionFactory(c => ApplicationContext.Current));
+            container.RegisterType<UmbracoContext>(new InjectionFactory(c => UmbracoContext.Current));
+            container.RegisterType<UmbracoHelper>(new InjectionConstructor(typeof(UmbracoContext)));
 
             container.RegisterType<ILogFactory, LogFactory>();
             container.RegisterType<IFileSystem, FileSystem>();

@@ -3,19 +3,28 @@
  * =============== */
 import React from 'react';
 import { 
-    Route,
-    Switch,
-    Redirect,
+  Route,
+  Switch,
+  Redirect,
 } from 'react-router';
 import {
   TransitionGroup,
   CSSTransition,
 } from 'react-transition-group';
+import {
+  Link,
+} from 'react-router-dom';
+import home from 'components/home';
+import about from 'components/about';
+var routes = [
+  '/home',
+  '/about',
+];
 
-var components = {
-    '/': () => <p>Home</p>,
-    about: () => <p>About</p>,
-};
+var components = { };
+(() => routes.forEach(route => 
+  components[route] = eval(`_${route.substr(1)}.default`)
+))();
 
 const RedirectWithStatus = ({ from, to, status }) => (
   <Route render={({ staticContext }) => {
@@ -26,7 +35,6 @@ const RedirectWithStatus = ({ from, to, status }) => (
     return <Redirect from={from} to={to}/>
   }}/>
 ) 
-RedirectWithStatus;
 
 const Status = props => (
   <Route render={({ staticContext }) => {
@@ -71,20 +79,23 @@ export const PropsRoute = ({ component, ...rest }) => {
 const SwitchWrapper = ({ render, ...rest }) =>
   render(rest)
 
-var routes = [
-    '/',
-    'about',
-];
-
 const App = props => 
   <div>
-    <header>Header</header>
+    <header>
+      <h3>Header</h3>
+      <ul>
+        {routes.map(route =>
+          <li key={route}><Link to={route}>{route}</Link></li>
+        )}
+      </ul>
+    </header>
     <Route render={({ location }) => (
       <TransitionGroup>
         <SwitchWrapper render={transitionProps => (
           <Switch key={location.key} location={location}>
+            <PropsRoute {...props} path={'/'} {...transitionProps} component={components[Object.keys(components)[0]]} />
             {routes.map(route => 
-                <PropsRoute exact {...props} path={route} {...transitionProps} component={components[route]} />
+              <PropsRoute exact {...props} path={route} {...transitionProps} component={components[route]} key={route}/>
             )}
             <PropsRoute {...props} {...transitionProps} component={NotFound} />
           </Switch>
@@ -95,3 +106,7 @@ const App = props =>
   </div>
 
 export default App;
+
+home;
+about;
+RedirectWithStatus;

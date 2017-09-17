@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.SPA", "Umbraco.SPA\Umbraco.SPA.csproj", "{EF9A28B2-9F54-4006-9D68-D994CF7A740C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{F0F5190E-22AB-47C6-8859-85EE6E8E0C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0F5190E-22AB-47C6-8859-85EE6E8E0C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0F5190E-22AB-47C6-8859-85EE6E8E0C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9A28B2-9F54-4006-9D68-D994CF7A740C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9A28B2-9F54-4006-9D68-D994CF7A740C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9A28B2-9F54-4006-9D68-D994CF7A740C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9A28B2-9F54-4006-9D68-D994CF7A740C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
 }
 
-@Html.ReactRouterWithContext("Routing", new { });
+@section Main {
+    @Html.ReactRouterWithContext("Routing", new { });
+}

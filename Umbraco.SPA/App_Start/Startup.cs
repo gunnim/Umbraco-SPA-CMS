@@ -1,7 +1,6 @@
-using System.Web.Http;
-using System.Web.Http.ExceptionHandling;
 using Umbraco.Core;
 using Umbraco.Extensions.App_Start;
+using Umbraco.Web.Routing;
 
 namespace Umbraco.Extensions
 {
@@ -16,6 +15,7 @@ namespace Umbraco.Extensions
 
         public void OnApplicationStarting(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext)
         {
+            ContentFinderResolver.Current.InsertType<ContentFinder>();
         }
 
         /// <summary> 
@@ -25,11 +25,6 @@ namespace Umbraco.Extensions
         /// <param name="applicationContext"></param> 
         public void OnApplicationStarted(UmbracoApplicationBase httpApplication, ApplicationContext applicationContext)
         {
-            GlobalConfiguration.Configure(config =>
-            {
-                config.Services.Add(typeof(IExceptionLogger), new GlobalExceptionLogger());
-            });
-
             // Register Types 
             var container = UnityConfig.GetConfiguredContainer();
         }
